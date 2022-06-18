@@ -1,14 +1,20 @@
-//
-// Created by Yakov Khodorkovski on 01/06/2022.
-//
-
-#ifndef EX6_CPP_GAME_H
-#define EX6_CPP_GAME_H
+#pragma once
+#include "Team.h"
+#include <chrono>
 
 
 class Game {
+Team Home_team; 
+Team Away_team;
 
+public : 
+Game(Team & Home_team, Team & Away_team);
+unsigned int Home_result;
+unsigned int Away_result;
+void print_game(int home_result, int away_result);
+Game ()= default;
+~Game()= default;
+unsigned int add_bonus(double t);
 };
 
 
-#endif //EX6_CPP_GAME_H
