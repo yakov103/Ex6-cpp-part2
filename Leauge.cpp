@@ -30,13 +30,15 @@ bool Leauge::Start() {
     this->is_started = true;
     this->fill_bots();
     this->schedule.generate_next_round();
+    return true;
 }
 
 bool Leauge::fill_bots() { 
    while (this->teams.size() < 20) {
     string name = "Bot " + to_string(this->teams.size());
-       this->teams.push_back(Team(name, 0.5, true));
+       this->teams.push_back(Team(name, 0.5));
    }
+   return true; 
 }
 
 
@@ -49,7 +51,7 @@ std::string random_string( size_t length )
         "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
         "abcdefghijklmnopqrstuvwxyz";
         const size_t max_index = (sizeof(charset) - 1);
-        return charset[ rand() % max_index ];
+        return charset[ (unsigned long) rand() % max_index ];
     };
     std::string str(length,0);
     std::generate_n( str.begin(), length, randchar );

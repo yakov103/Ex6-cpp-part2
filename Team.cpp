@@ -3,13 +3,15 @@
 //
 
 #include "Team.h"
-static unsigned int idMaker = 0 ; 
+static unsigned int idMaker = 0 ;
 
-Team::Team (string & name, double strength, bool is_bot = false) : name(name), id(idMaker++), strength(strength), is_bot(is_bot) {
+
+Team::Team (string name, double strength) : name(name), id(idMaker++), strength(strength) {
     this->stats.games_played= 0 ; 
     this->stats.goals_scored = 0 ;
     this->stats.wins = 0 ;
     this->stats.loses = 0 ;
+    
 }
 
 

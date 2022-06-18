@@ -28,7 +28,7 @@ stats stats;
 public : 
 Team() = default;
 ~Team() = default;
-Team (string & name, double strength, bool is_bot = false);
+Team (string name, double strength);
 void update_stats(int goals_scored, size_t wins);
 void print_stats();
 double get_strength();
